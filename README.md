@@ -121,4 +121,4 @@ If `mcpServers` already exists, merge only the `ollama` entry.
 ![mcp-setup](./assets/img/enabled-mcp.png)
 
 ### Cursor Prompt+Response (Chat session)
-![cursor-chat](./assets/img/cursor-response.png)
+![cursor-chat](./assets/img/cursor-request-response.png)
