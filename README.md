@@ -42,3 +42,83 @@ node build/index.js
 ```
 
 The server communicates over stdio and will call Ollama at `http://localhost:11434`.
+
+## 4) Use in Cursor
+
+Add this server entry to your Cursor MCP config (`~/.cursor/mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "ollama": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/home/ahmedhaider/work/personal/git/repositories/github.com/syedahmedhaidershah/tradymate/mcp-ollama/build/index.js"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+If your existing file already has other servers, only add the `ollama` block under `mcpServers`.
+
+## 5) Use in Claude Code (CLI)
+
+Claude supports loading MCP servers from a JSON config via `--mcp-config`.
+
+Create a config file (for example `~/.claude/mcp.json`) with:
+
+```json
+{
+  "mcpServers": {
+    "ollama": {
+      "command": "node",
+      "args": [
+        "/home/ahmedhaider/work/personal/git/repositories/github.com/syedahmedhaidershah/tradymate/mcp-ollama/build/index.js"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+Run Claude with:
+
+```bash
+claude --mcp-config ~/.claude/mcp.json
+```
+
+## 6) Use in Gemini CLI
+
+Gemini CLI reads MCP servers from `mcpServers` in `~/.gemini/settings.json` (or project `.gemini/settings.json`).
+
+Add:
+
+```json
+{
+  "mcpServers": {
+    "ollama": {
+      "command": "node",
+      "args": [
+        "/home/ahmedhaider/work/personal/git/repositories/github.com/syedahmedhaidershah/tradymate/mcp-ollama/build/index.js"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+If `mcpServers` already exists, merge only the `ollama` entry.
+
+# Usage Screenshots / PoC
+
+### Setup in shell
+![shell-screenshot](./assets/img/shell-setup.png)
+
+### Enabled MCP in cursor
+![mcp-setup](./assets/img/enabled-mcp.png)
+
+### Cursor Prompt+Response (Chat session)
+![cursor-chat](./assets/img/cursor-response.png)
