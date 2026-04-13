@@ -1,0 +1,29 @@
+{
+  "name": "mcp-ollama",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "mcp-ollama": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.28.0",
+    "axios": "^1.14.0",
+    "dotenv": "^17.4.2",
+    "tsc": "^2.0.4",
+    "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  }
+}
