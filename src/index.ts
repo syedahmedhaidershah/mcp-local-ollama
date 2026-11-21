@@ -7,7 +7,7 @@ import axios from "axios";
 import process from "process";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const DEFAULT_MODEL = process.env.DEFAULT_MODEL || "phi4-mini";
 
